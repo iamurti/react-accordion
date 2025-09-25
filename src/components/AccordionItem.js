@@ -1,12 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
-const AccordionItem = ({ title, content, open }) => {
-  const [isOpen, setIsOpen] = useState(open);
+const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   const contentRef = useRef(null);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     if (contentRef.current) {
@@ -37,7 +32,7 @@ const AccordionItem = ({ title, content, open }) => {
 
   return (
     <div className="accordion-item">
-      <button className="accordion-header" onClick={toggle}>
+      <button className="accordion-header" onClick={onToggle}>
         <span className="accordion-title">{title}</span>
         <svg
           className={`accordion-icon ${isOpen ? 'open' : ''}`}
