@@ -33,11 +33,26 @@ Build an Accordion component that displays content as a list of headings that th
    npm start
    ```
 
-3. Build the project for production:
+3. Run tests:
+   ```sh
+   npm test
+   ```
+
+4. Build the project for production:
    ```sh
    npm run build
    ```
    This will generate optimized files in the `build` folder, ready for deployment.
+
+## Testing
+
+The project includes automated tests that verify the accordion functionality. Tests cover component rendering, user interactions, and exclusive behavior (only one item open at a time).
+
+To run tests:
+```sh
+npm test              # Run tests in watch mode
+npm test -- --watchAll=false  # Run tests once
+```
 
 ## Project Structure
 
