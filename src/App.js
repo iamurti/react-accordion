@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import Accordion from './components/Accordion';
+
+const App = () => {
+  const items = [
+    {
+      title: 'What is Github and how does it work?',
+      content: 'GitHub is the home for all developers...',
+      open: true, // Inicialmente abierto
+    },
+    {
+      title: 'How do I see GitHub’s availability?',
+      content: 'Check our real-time status report',
+      open: false,
+    },
+    {
+      title: 'Why is GitHub so popular?',
+      content: 'GitHub is built by developers for developers...',
+      open: false,
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-content">
+        <h1>Accordion component</h1>
+        <Accordion items={items} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
